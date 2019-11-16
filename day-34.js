@@ -21,3 +21,18 @@ class Person {
     this.info = name + 's age is ' + age;
   }
 }
+
+
+//https://www.codewars.com/kata/basic-subclasses-adam-and-eve/train/javascript
+
+class God{
+  static create(){
+    return [new Man(), new Woman()];
+  }
+}
+
+class Human {}
+
+class Man extends Human {}
+
+class Woman extends Human {}
