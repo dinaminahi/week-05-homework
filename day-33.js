@@ -302,7 +302,6 @@ describe('`Reflect.apply` calls a target function', function() {
 
 //http://tddbin.com/#?kata=es6/language/reflect/defineproperty
 
-
 // 69: Reflect - defineProperty 
 // To do: make all tests pass, leave the assert lines unchanged!
 
@@ -388,8 +387,8 @@ describe('`Reflect.defineProperty()` is like `Object.defineProperty()` but retur
     describe('returns false', function() {
       it('when a non-configurable property wants to be changed to configurable=true', function() {
         let obj = {};
-        Reflect.defineProperty(obj, 'x');
-        const wasPropertyDefined = Reflect.defineProperty(obj, 'x');
+        Reflect.defineProperty(obj, 'x', {configurable: false});
+        const wasPropertyDefined = Reflect.defineProperty(obj, 'x',{ configurable: true});
         assert.equal(wasPropertyDefined, false);
       });
       it('when the object we want to add a property to is frozen', function() {
@@ -401,5 +400,7 @@ describe('`Reflect.defineProperty()` is like `Object.defineProperty()` but retur
     });
   });
 });
+
+
 
 
