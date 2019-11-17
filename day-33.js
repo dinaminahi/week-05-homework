@@ -192,7 +192,7 @@ describe('`Reflect.construct` is the `new` operator as a function', function() {
       assert.throws(() => { Reflect.construct(aClass, aNumber) }, TypeError);
     });
     it('works with an array-like object (the `length` property look up should not throw)', function() {
-      let arrayLike = {get length() { throw new Error(); }};
+      let arrayLike = {get length() {}};
       assert.doesNotThrow(() => { Reflect.construct(aClass, arrayLike) });
     });
     it('works with a real array', function() {
