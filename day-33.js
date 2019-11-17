@@ -175,7 +175,7 @@ describe('`Reflect.construct` is the `new` operator as a function', function() {
       assert.throws(() => { Reflect.construct(aNumber, []) }, TypeError);
     });
     it('works given a function that can be instanciated', function() {
-      let aFunction = (x) => {};
+      let aFunction = class  {};
       assert.doesNotThrow(() => { Reflect.construct(aFunction, []) });
     });
     it('works given a class', function() {
